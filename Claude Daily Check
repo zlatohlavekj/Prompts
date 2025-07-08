@@ -1,0 +1,217 @@
+# Instrukce pro Daily Check
+
+## Přehled úkolů
+Daily check slouží k pravidelnému přehledu a sumarizaci nových informací ze tří hlavních zdrojů:
+1. **Emailová komunikace** - nové zprávy z posledních 24 hodin
+2. **Kalendář** - dnešní události a nadcházející týden
+3. **Aktuální zpravodajství** - nejnovější zprávy v definovaných tématech
+
+## Část 1: Kontrola emailů
+
+### Postup kontroly emailů
+1. **Vyhledání nových zpráv**
+   - Použij `search_gmail_messages` s parametrem `newer_than:1d`
+   - Zaměř se na nepřečtené zprávy (`is:unread`)
+   - Přeskoč automatické notifikace, spam a newslettery
+
+2. **Kategorizace emailů**
+   - **Vysoká priorita**: Urgentní požadavky, eskalace, důležité rozhodnutí
+   - **Střední priorita**: Běžná pracovní komunikace, informace k akci
+   - **Nízká priorita**: FYI zprávy, interní update, dokumentace
+
+3. **Analýza obsahu**
+   - Identifikuj akční položky a deadliny
+   - Rozpoznej požadavky vyžadující odpověď
+   - Zaznamenej klíčové informace a rozhodnutí
+
+### Výstupní formát pro emaily
+```markdown
+## 📧 Přehled nových emailů
+
+### Vysoká priorita
+- **Od**: [Odesílatel] | **Předmět**: [Předmět]
+  - **Akce**: [Co je potřeba udělat]
+  - **Deadline**: [Časový rámec]
+
+### Střední priorita
+- **Od**: [Odesílatel] | **Předmět**: [Předmět]
+  - **Shrnutí**: [Stručný obsah]
+  - **Doporučení**: [Navrhovaná akce]
+
+### Nízka priorita
+- **FYI zprávy**: [Počet] nových informativních zpráv
+- **Klíčové informace**: [Významné update, pokud existují]
+```
+
+## Část 2: Kontrola kalendáře
+
+### Postup kontroly kalendáře
+1. **Dnešní události**
+   - Použij `list_gcal_events` pro dnešní datum
+   - Identifikuj nadcházející meetingy a jejich prioritu
+   - Zkontroluj přípravy a požadavky pro jednotlivé události
+
+2. **Týdenní přehled**
+   - Získej přehled událostí na nadcházejících 7 dní
+   - Identifikuj deadliny a důležité milníky
+   - Zaznamenej případné konflikty nebo nahuštěné období
+
+3. **Změny v kalendáři**
+   - Porovnej s včerejškem (nové/zrušené/přesunuté události)
+   - Identifikuj urgentní změny vyžadující akci
+   - Zkontroluj dostupnost a přípravu na nové události
+
+### Výstupní formát pro kalendář
+```markdown
+## 📅 Kalendář a události
+
+### Dnes - [Datum]
+- **[Čas]**: [Název události]
+  - **Účastníci**: [Klíčové osoby]
+  - **Příprava**: [Co je potřeba připravit]
+  - **Priorita**: [Vysoká/Střední/Nízká]
+
+### Nadcházející týden - významné události
+- **[Datum] [Čas]**: [Název události]
+  - **Deadline/Milestone**: [Pokud relevantní]
+  - **Příprava potřebná**: [Akční kroky]
+
+### Změny v kalendáři
+- **Nové události**: [Počet] nových událostí
+- **Zrušené**: [Významné zrušené události]
+- **Přesunuté**: [Důležité změny času]
+- **Konflikty**: [Případná časová kolize]
+```
+
+## Část 3: Přehled zpravodajství
+
+### Tematické oblasti
+1. **Domácí zprávy** (Česká republika)
+2. **Světové zprávy** (mezinárodní události)
+3. **Umělá inteligence** (AI/ML vývoj, regulace)
+4. **Cybersecurity** (incidenty, hrozby, obrana)
+5. **Obecné technologie** (nové technologie, trendy)
+
+### Postup pro každé téma
+1. **Vyhledání aktuálních zpráv**
+   - Použij `web_search` pro každou tematickou oblast
+   - Zaměř se na zprávy z posledních 24 hodin
+   - Preferuj věrohodné zdroje (oficiální média, odborné weby)
+
+2. **Výběr relevantních zpráv**
+   - Maximálně 3-5 nejdůležitějších zpráv per téma
+   - Prioritizuj zprávy s praktickým dopadem
+   - Vyhni se duplicitám a málo významným informacím
+
+3. **Analýza a kontext**
+   - Vysvětli význam a dopad zprávy
+   - Propoj s předchozími událostmi, pokud je to relevantní
+   - Identifikuj trendy a vzorce
+
+### Výstupní formát pro zpravodajství
+```markdown
+## 📰 Přehled zpravodajství
+
+### 🇨🇿 Domácí zprávy
+- **[Nadpis zprávy]**
+  - **Zdroj**: [Publikace] | **Čas**: [Publikace]
+  - **Shrnutí**: [Stručný obsah a kontext]
+  - **Dopad**: [Praktické důsledky]
+
+### 🌍 Světové zprávy
+- **[Nadpis zprávy]**
+  - **Zdroj**: [Publikace] | **Čas**: [Publikace]
+  - **Shrnutí**: [Stručný obsah a kontext]
+  - **Dopad**: [Praktické důsledky]
+
+### 🤖 Umělá inteligence
+- **[Nadpis zprávy]**
+  - **Zdroj**: [Publikace] | **Čas**: [Publikace]
+  - **Shrnutí**: [Stručný obsah a kontext]
+  - **Dopad**: [Praktické důsledky]
+
+### 🔒 Cybersecurity
+- **[Nadpis zprávy]**
+  - **Zdroj**: [Publikace] | **Čas**: [Publikace]
+  - **Shrnutí**: [Stručný obsah a kontext]
+  - **Dopad**: [Praktické důsledky]
+
+### 💻 Obecné technologie
+- **[Nadpis zprávy]**
+  - **Zdroj**: [Publikace] | **Čas**: [Publikace]
+  - **Shrnutí**: [Stručný obsah a kontext]
+  - **Dopad**: [Praktické důsledky]
+```
+
+## Část 4: Závěrečné shrnutí
+
+### Struktura závěrečného shrnutí
+```markdown
+## 📋 Denní shrnutí a doporučení
+
+### ⚡ Prioritní akce
+1. [Nejdůležitější úkoly z emailů]
+2. [Příprava na dnešní meetingy]
+3. [Reakce na významné zprávy]
+4. [Deadliny a časové rámce]
+
+### 📅 Dnešní fokus
+- **Klíčové meetingy**: [Nejvýznamnější události dne]
+- **Přípravy potřebné**: [Co je třeba dokončit před meetingy]
+- **Časové bloky**: [Doporučené rozložení dne]
+
+### 📊 Klíčové trendy
+- [Významné vzorce v technologiích]
+- [Důležité geopolitické změny]
+- [Nové příležitosti nebo hrozby]
+
+### 🎯 Doporučení na další akce
+- [Navrhované kroky na základě analýzy]
+- [Oblasti vyžadující pozornost]
+- [Možnosti pro další sledování]
+
+### 📈 Metriky
+- **Zpracované emaily**: [Počet]
+- **Dnešní události**: [Počet]
+- **Analyzované zprávy**: [Počet]
+- **Vysoká priorita**: [Počet položek]
+- **Čas zpracování**: [Odhadovaný čas]
+```
+
+## Technické specifikace
+
+### Použité nástroje
+- `search_gmail_messages` - pro vyhledání nových emailů
+- `read_gmail_thread` - pro detailní analýzu důležitých zpráv
+- `list_gcal_events` - pro přehled dnešních a nadcházejících událostí
+- `web_search` - pro vyhledání aktuálních zpráv
+- `web_fetch` - pro získání úplného obsahu článků
+
+### Parametry vyhledávání
+- **Emaily**: `newer_than:1d` pro zprávy z posledních 24 hodin
+- **Kalendář**: Dnešní datum + 7 dní dopředu
+- **Zprávy**: Klíčová slova v češtině a angličtině pro každé téma
+- **Časové omezení**: Maximálně 25 minut na kompletní daily check
+
+### Kvalitativní kritéria
+- **Věrohodnost**: Pouze ověřené zdroje informací
+- **Relevance**: Zaměření na prakticky použitelné informace
+- **Aktuálnost**: Priorita nejnovějších informací
+- **Kontext**: Propojení s dlouhodobými trendy
+
+## Poznámky k implementaci
+
+### Automatizace
+- Daily check lze spustit jednoduchým příkazem
+- Výstup je vždy ve standardizovaném formátu
+- Možnost přizpůsobení podle zpětné vazby
+
+### Flexibilita
+- Tematické oblasti lze rozšířit nebo zúžit
+- Prioritizace podle aktuálních potřeb
+- Možnost filtrování podle důležitosti
+
+### Výstupní formáty
+- Hlavní výstup v markdown formátu
+- Možnost exportu do různých formátů
+- Archivace pro dlouhodobé sledování trendů
